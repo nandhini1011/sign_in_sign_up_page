@@ -13,78 +13,83 @@
 
 </head>
 <body>
+
+    
+   
     <div id="maincontainer" class="container-fluid">
         <div class="row">
             <div id="img-grid" class="col">
                 <img src="./src/image.jpeg" class="img-fluid" alt="SignInImage">
             </div>
-            <div class="col">
-                <div class="container-fluid">
+            <div id="form-section" class="col">
+                <ul class="nav nav-pills my-3 " id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="pills-signin-tab" data-bs-toggle="pill" data-bs-target="#pills-signin" type="button" role="tab" aria-controls="pills-signin" aria-selected="true">Sign In</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="pills-signup-tab" data-bs-toggle="pill" data-bs-target="#pills-signup" type="button" role="tab" aria-controls="pills-signup" aria-selected="false">Sign Up</button>
+                    </li>
+                </ul>
 
-                    <!-- upper button section to select
-                        the login or signup form -->
-                    <div class="slider"></div>
-                    <div class="btn">
-                        <button class="signin">Login</button>
-                        <button class="signup">Signup</button>
-                    </div>
-
-                    <div class="form-section">
-                        <!-- sign in form -->
-                        <form id="sign-in-form">
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-signin" role="tabpanel" aria-labelledby="pills-signin-tab" tabindex="0">
+                        <form  id="signin-form" method="post" action="/">
+                            <h2 class="text-primary text-center mb-4">Sign-In Form</h2>
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control form-control-sm" id="floatingInput" placeholder="name@example.com">
+                                <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                                 <label for="floatingInput">Email address</label>
                             </div>
-                            <div class="form-floating">
-                                <input type="password" class="form-control form-control-sm" id="floatingPassword" placeholder="Password">
+                            <div class="form-floating mb-2">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                                 <label for="floatingPassword">Password</label>
                             </div>
-                            <div class="form-check my-2">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label text-primary" for="flexCheckDefault">
-                                    Remember me
-                                </label>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" value="" id="rememberMe">
+                                <label class="form-check-label text-primary" for="rememberMe">Remember me</label>
                             </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary" type="submit">Submit</button>
-                            </div>
-                        </form>                      
-                        <!-- sign up form -->
-                        <form id="sign-up-form">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control form-control-sm" id="floatingName" placeholder="Username">
-                                <label for="floatingName">UserName</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="email" class="form-control form-control-sm" id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput">Email address</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="password" class="form-control form-control-sm" id="floatingPassword" placeholder="Password">
-                                <label for="floatingPassword">Password</label>
-                            </div>
-                            <div class="form-floating ">
-                                <input type="password" class="form-control form-control-sm" id="floatingPassword" placeholder="Password">
-                                <label for="floatingPassword">Conform Password</label>
-                            </div>
-                            <div class="form-check my-2">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label text-primary" for="flexCheckDefault">
-                                    I agree to the terms & conditions
-                                </label>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary" type="submit">Submit</button>
-                            </div>
-                        </form>  
+                            
+                            <button type="submit" class="btn btn-primary" >Sign in</button>
+            
+                        </form>
                     </div>
-                </div>          
+                    <div class="tab-pane fade" id="pills-signup" role="tabpanel" aria-labelledby="pills-signup-tab" tabindex="0">
+                        <form id="signup-form" method="post" action="/">
+                            <h2 class="text-primary text-center">Sign-Up Form</h2>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInputMail" placeholder="name@example.com">
+                                <label for="floatingInputMail">Email address</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="floatingNewPassword" placeholder="Password" >
+                                <label for="floatingNewPassword">Password</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="floatingRePassword" placeholder="Password">
+                                <label for="floatingRePassword">Repeat Password</label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckCondition" required>
+                                <label class="form-check-label text-primary" for="flexCheckCondition">I agree to all terms & Conditions</label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                            
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </div>
       </div>
 
-    <!-- custom JS -->
-    <script src="script.js"></script>
+    
+
+    <!-- Bootstrap Js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+   <!-- custom JS -->
+   <script src="script.js"></script>
+
 </body>
 </html>
